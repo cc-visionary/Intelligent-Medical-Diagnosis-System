@@ -93,19 +93,19 @@ hypothesis(Patient, emphysema):-
     symptom(Patient, not_mentally_alert).
 
 hypothesis(Patient, bronchitis):-
+    symptom(Patient, shortness_of_breath),
     symptom(Patient, cough_with_phlegm),
     symptom(Patient, fatigue),
-    symptom(Patient, shortness_of_breath),
     symptom(Patient, chest_discomfort),
     symptom(Patient, fever),
     symptom(Patient, runny_nose).
     
 hypothesis(Patient, pneumonia):-
+    symptom(Patient, shortness_of_breath),
     symptom(Patient, chest_pain),
     symptom(Patient, cough_with_phlegm),
     symptom(Patient, fever),
     symptom(Patient, nausea),
-    symptom(Patient, shortness_of_breath),
     symptom(Patient, fatigue).
     
 hypothesis(Patient, tuberculosis):-
@@ -127,9 +127,9 @@ hypothesis(Patient, pulmonary_edema):-
     symptom(Patient, palpitations).
 
 hypothesis(Patient, lung_cancer):-
+    symptom(Patient, shortness_of_breath),
     symptom(Patient, dry_cough),
     symptom(Patient, coughing_up_blood),
-    symptom(Patient, shortness_of_breath),
     symptom(Patient, chest_pain),
     symptom(Patient, unintentional_weight_loss),
     symptom(Patient, bone_pain),
@@ -145,15 +145,14 @@ hypothesis(Patient, interstitial_lung_disease):-
     symptom(Patient, dry_cough).
     
 hypothesis(Patient, pneumothorax):-
-    symptom(Patient, chest_pain),
     symptom(Patient, shortness_of_breath).
+    symptom(Patient, chest_pain),
 
 start:-
     write("What is the name of the Patient? "),
     read(Patient),
     hypothesis(Patient, Disease),
     write(Patient), write(" probably has "), write(Disease), write("."), nl.
-
 
 start :-
     write("Sorry, I don't seem to be able to"),nl,
