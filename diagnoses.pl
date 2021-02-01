@@ -1,175 +1,191 @@
 /* http://www.dailyfreecode.com/code/prolog-medical-diagnostic-system-3075.aspx */
+/* https://github.com/sjbushra/Medical-Diagnosis-system-using-Prolog/blob/master/medical-diagnosis.pl */
 
-symptom(Name, Indication).
-age(Name, Number).
+symptom(name, indication).
 
-/* 
-  Symptoms
-   shortness_of_breath
-   runny_nose
-   chest_pain
-   chest_discomfort
-   wheezing_when_exhaling
-   cough_with_phlegm
-   dry_cough
-   not_mentally_alert 
-   fatigue
-   fever
-   nausea
-   loss_of_appetite
-   rapid_weight_gain
-   anxiety
-   bluish_lips
-   palpitations
-   fast_heartbeat
-   bone_pain
-   low_blood_pressure
-*/
+symptom(patient, headache):-
+    write("Have you experience headache?"),
+    response(reply),
+    reply = 'y'.
 
-symptom(Patient, shortness_of_breath):-
-    write("Does ", Patient, " have shortness of breath?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, shortness_of_breath):-
+    write("Do you have shortness of breath?"),
+    response(reply),
+    reply = 'y'.
 
+symptom(patient, runny_nose):-
+    write("Do you have runny nose?"),
+    response(reply),
+    reply = 'y'.
+    
+symptom(patient, chest_pain):-
+    write("Do you have chest pain?"),
+    response(reply),
+    reply = 'y'.
+     
+symptom(patient, chest_discomfort):-
+    write("Do you have chest discomfort?"),
+    response(reply),
+    reply = 'y'.
+    
+symptom(patient, wheezing_when_exhaling):-
+    write("Do you wheeze while exhaling?"),
+    response(reply),
+    reply = 'y'.
+    
+symptom(patient, cough_with_phlegm):-
+    write("Do you have cough with phlegm?"),
+    response(reply),
+    reply = 'y'.
+    
+symptom(patient, dry_cough):-
+    write("Do you have dry cough?"),
+    response(reply),
+    reply = 'y'.
 
-symptom(Patient, runny_nose):-
-    write("Does ", Patient, " have runny nose?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, coughing_up_blood):-
+    write("Do you cough with blood?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, chest_pain):-
-    write("Does ", Patient, " have chest pain?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, not_mentally_alert):-
+    write("Are you not mentally alert sometimes?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, chest_discomfort):-
-    write("Does ", Patient, " have chest discomfort?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, fatigue):-
+    write("Do you experience fatigue?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, wheezing_when_exhaling):-
-    write("Does ", Patient, " wheeze while exhaling?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, fever):-
+    write("Do you have fever?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, cough_with_phlegm):-
-    write("Does ", Patient, " have cough with phlegm?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, nausea):-
+    write("Do you experience nausea?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, dry_cough):-
-    write("Does ", Patient, " have dry cough?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, loss_of_appetite):-
+    write("Do you sometimes have loss of appetite?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, not_mentally_alert):-
-    write("Is ", Patient, " not mentally alert sometimes?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, anxiety):-
+    write("Do you have anxiety?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, fatigue):-
-    write("Does ", Patient, " experience fatigue?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, bluish_lips):-
+    write("Do you have bluish lips?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, fever):-
-    write("Does ", Patient, " have fever?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, palpitations):-
+    write("Do you have palpitations?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, nausea):-
-    write("Does ", Patient, " experience nausea?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, bone_pain):-
+    write("Do you have pain in the bone?"),
+    response(reply),
+    reply = 'y'.
     
-symptom(Patient, loss_of_appetite):-
-    write("Does ", Patient, " sometimes have loss of appetite?")
-    response(Reply),
-    Reply = 'y'.
-    
-symptom(Patient, anxiety):-
-    write("Does ", Patient, " have anxiety?")
-    response(Reply),
-    Reply = 'y'.
-    
-symptom(Patient, bluish_lips):-
-    write("Does ", Patient, " have bluish lips?")
-    response(Reply),
-    Reply = 'y'.
-    
-symptom(Patient, palpitations):-
-    write("Does ", Patient, " have palpitations?")
-    response(Reply),
-    Reply = 'y'.
-    
-symptom(Patient, fast_heartbeat):-
-    write("Does ", Patient, " have fast heartbeat?")
-    response(Reply),
-    Reply = 'y'.
-    
-symptom(Patient, bone_pain):-
-    write("Does ", Patient, " have pain in the bone?")
-    response(Reply),
-    Reply = 'y'.
-    
-symptom(Patient, low_blood_pressure):-
-    write("Does ", Patient, " have low blood pressure?")
-    response(Reply),
-    Reply = 'y'.
+symptom(patient, low_blood_pressure):-
+    write("Do you have low blood pressure?"),
+    response(reply),
+    reply = 'y'.
 
-hypothesis(Patient, asthma):-
-    symptom(Patient, shortness_of_breath),
-    symptom(Patient, chest_pain),
-    symptom(Patient, wheezing_when_exhaling),
-    symptom(Patient, coughing_with_phlegm),
-    symptom(Patient, trouble_sleeping_due_to_symptoms).
+symptom(patient, trouble_sleeping_due_to_symptoms):-
+    write("Do you have trouble sleeping due to symptoms?"),
+    response(reply),
+    reply = 'y'.
 
-hypothesis(Patient, emphysema):-
-    symptom(Patient, shortness_of_breath),
-    symptom(Patient, not_mentally_alert).
+symptom(patient, rapid_weight_gain):-
+    write("Did you gain weight rapidly?"),
+    response(reply),
+    reply = 'y'.
+ 
+symptom(patient, unintentional_weight_loss):-
+    write("Did you lose weight unintentionally?"),
+    response(reply),
+    reply = 'y'.
 
-hypothesis(Patient, bronchitis):-
-    symptom(Patient, cough_with_phlegm),
-    symptom(Patient, fatigue),
-    symptom(Patient, shortness_of_breath),
-    symptom(Patient, chest_discomfort),
-    symptom(Patient, fever),
-    symptom(Patient, runny_nose).
+hypothesis(patient, asthma):-
+    symptom(patient, shortness_of_breath),
+    symptom(patient, chest_pain),
+    symptom(patient, wheezing_when_exhaling),
+    symptom(patient, cough_with_phlegm),
+    symptom(patient, trouble_sleeping_due_to_symptoms).
+
+hypothesis(patient, emphysema):-
+    symptom(patient, shortness_of_breath),
+    symptom(patient, not_mentally_alert).
+
+hypothesis(patient, bronchitis):-
+    symptom(patient, cough_with_phlegm),
+    symptom(patient, fatigue),
+    symptom(patient, shortness_of_breath),
+    symptom(patient, chest_discomfort),
+    symptom(patient, fever),
+    symptom(patient, runny_nose).
     
-hypothesis(Patient, pneumonia):-
-    symptom(Patient, chest_pain),
-    symptom(Patient, ).
+hypothesis(patient, pneumonia):-
+    symptom(patient, chest_pain),
+    symptom(patient, cough_with_phlegm),
+    symptom(patient, fever),
+    symptom(patient, nausea),
+    symptom(patient, shortness_of_breath),
+    symptom(patient, fatigue).
     
-hypothesis(Patient, tuberculosis):-
-    symptom(Patient, ),
-    symptom(Patient, ).
+hypothesis(patient, tuberculosis):-
+    symptom(patient, dry_cough),
+    symptom(patient, coughing_up_blood),
+    symptom(patient, chest_pain),
+    symptom(patient, unintentional_weight_loss),
+    symptom(patient, fatigue),
+    symptom(patient, fever),
+    symptom(patient, loss_of_appetite).
 
-hypothesis(Patient, pulmonary_edema):-
-    symptom(Patient, ),
-    symptom(Patient, ).
+hypothesis(patient, pulmonary_edema):-
+    symptom(patient, shortness_of_breath),
+    symptom(patient, cough_with_phlegm),
+    symptom(patient, coughing_up_blood),
+    symptom(patient, anxiety),
+    symptom(patient, wheezing_when_exhaling),
+    symptom(patient, bluish_lips),
+    symptom(patient, palpitations).
 
-hypothesis(Patient, lung_cancer):-
-    symptom(Patient, ),
-    symptom(Patient, ).
+hypothesis(patient, lung_cancer):-
+    symptom(patient, dry_cough),
+    symptom(patient, coughing_up_blood),
+    symptom(patient, shortness_of_breath),
+    symptom(patient, chest_pain),
+    symptom(patient, unintentional_weight_loss),
+    symptom(patient, bone_pain),
+    symptom(patient, headache).
 
-hypothesis(Patient, acute_respiratory_distress_syndrome):-
-    symptom(Patient, ),
-    symptom(Patient, ).
+hypothesis(patient, acute_respiratory_distress_syndrome):-
+    symptom(patient, shortness_of_breath),
+    symptom(patient, low_blood_pressure),
+    symptom(patient, fatigue).
 
-hypothesis(Patient, interstitial_lung_disease):-
-    symptom(Patient, ),
-    symptom(Patient, ).
+hypothesis(patient, interstitial_lung_disease):-
+    symptom(patient, shortness_of_breath),
+    symptom(patient, dry_cough).
     
-hypothesis(Patient, pneumothorax):-
-    symptom(Patient, ),
-    symptom(Patient, ).
+hypothesis(patient, pneumothorax):-
+    symptom(patient, chest_pain),
+    symptom(patient, shortness_of_breath).
 
-response(Reply):-
-    readchar(Reply),
-    write(Reply), nl.
+response(reply):-
+    readchar(reply),
+    write(reply), nl.
 
 start:-
     write("What is the name of the patient? "),
-    readln(Patient),
-    hypothesis(Patient, Disease),
-    write(Patient, " probably has ", Disease, "."), nl.
+    read(patient),
+    hypothesis(patient, disease),
+    write(patient, " probably has ", disease, "."), nl.
